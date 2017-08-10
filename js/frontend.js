@@ -10,9 +10,9 @@ $(document).ready(function(event) {
         $(this).next().toggleClass("phone-button_style");
         $(this).next().children(".phone-search-button").toggleClass("phone-search-button_active");
         if ($(this).parent(".phone-middle-header").next().is(':visible')){
-            $(this).children(".phone-button__text").html('Close');
+            $(this).children(".phone-button__text").html('Закрити');
         }else{
-            $(this).children(".phone-button__text").html('Menu');
+            $(this).children(".phone-button__text").html('Меню');
         }
     });
 
@@ -26,30 +26,32 @@ $(document).ready(function(event) {
     });
 
 
+    if ($('.img-slider').length){
+        $('.img-slider').slick({
+            centerMode: true,
+            centerPadding: '10%',
+            slidesToShow: 1,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '10%',
+                        slidesToShow: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '10%',
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    }
 
-    $('.img-slider').slick({
-        centerMode: true,
-        centerPadding: '10%',
-        slidesToShow: 1,
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '10%',
-                    slidesToShow: 1
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '10%',
-                    slidesToShow: 1
-                }
-            }
-        ]
-    });
 });
